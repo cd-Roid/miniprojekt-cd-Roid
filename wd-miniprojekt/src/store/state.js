@@ -1,4 +1,4 @@
 export default {
-	data_en: [],
-	data_de: [],
+  data_en: [],
+  data_de: []
 };

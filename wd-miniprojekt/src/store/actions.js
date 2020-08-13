@@ -1,18 +1,15 @@
+import german from "../../json/cda-paintings-v2.de.json";
+import english from "../../json/cda-paintings-v2.en.json";
+
 export default {
-	async fetchDataGerman({ commit }) {
-		const data = await fetch("/data/json/cda-paintings-v2.de.json");
-		if (!data.ok) {
-			console.error('Error fetching Data');
-		} else {
-			commit('fetchDataDeutsch', data);
-		}
-	},
-	async fetchDataEnglish({ commit }) {
-		const data = await fetch("/data/json/cda-paintings-v2.en.json");
-		if (!data.ok) {
-			console.error('Error fetching Data');
-		} else {
-			commit('fetchDataEnglish', data);
-		}
-	}
-}
+  fetchDataGerman({ commit }) {
+    const data = german;
+    console.log(data);
+    commit("fetchDataGerman", data);
+  },
+  fetchDataEnglish({ commit }) {
+    const data = english;
+    console.log(data);
+    commit("fetchDataEnglish", data);
+  }
+};
