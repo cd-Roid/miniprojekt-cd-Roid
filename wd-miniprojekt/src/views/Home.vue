@@ -1,18 +1,29 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <div v-for="article in articles" :key="article.objectId">
+      {{ article.titles[0].title }} - {{ article.sortingNumber}}
+    </div>
+    <HelloWorld></HelloWorld>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
 import HelloWorld from "@/components/HelloWorld.vue";
-
+import { mapState, mapActions } from "vuex";
 export default {
   name: "Home",
   components: {
     HelloWorld
+  },
+  computed: {
+    ...mapState({ articles: state => state.data_en })
+  },
+  methods: {
+    ...mapActions(["fetchDataEnglish"])
+  },
+  created() {
+    this.fetchDataEnglish();
   }
 };
 </script>
