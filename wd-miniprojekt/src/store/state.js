@@ -1,5 +1,7 @@
 export default {
   filtered: [],
   data: [],
-  years: []
+  years: [],
+  modalOpen: Boolean,
+  viewedArticle: null
 };

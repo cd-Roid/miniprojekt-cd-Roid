@@ -19,5 +19,11 @@ export default {
   removeImg({ commit }) {
     commit("removeImg");
     commit("destructure");
+  },
+  openModal({ commit }, article) {
+    commit("openModal", article);
+  },
+  closeModal({ commit }, article) {
+    commit("closeModal", article);
   }
 };

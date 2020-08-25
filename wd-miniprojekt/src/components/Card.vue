@@ -5,7 +5,7 @@
       @error="setPlaceholder"
       v-bind:src="article.images.sizes.s.src"
       v-bind:alt="article.title"
-      @click="CardExtendend"
+      @click="modalAction(article)"
     />
   </div>
 </template>
@@ -18,7 +18,7 @@ export default {
     article: Object
   },
   methods: {
-    ...mapActions(["removeImg"]),
+    ...mapActions(["removeImg", "openModal"]),
     setPlaceholder() {
       if (this.article.images === null) {
         this.removeImg();
@@ -26,6 +26,9 @@ export default {
         const link = "https://via.placeholder.com/300";
         event.target.src = link;
       }
+    },
+    modalAction(article) {
+      this.openModal(article);
     }
   }
 };

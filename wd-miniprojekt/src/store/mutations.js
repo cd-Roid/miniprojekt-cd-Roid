@@ -22,7 +22,9 @@ export default {
         inventoryNumber: element.inventoryNumber,
         objectId: element.objectId,
         title: element.titles[0].title,
-        repository: element.repository
+        repository: element.repository,
+        description: element.description
+
       };
       destructured.push(prop);
       if (state.years.includes(prop.dating) === false) {
@@ -39,5 +41,13 @@ export default {
   },
   removeImg(state, index) {
     state.data = state.data.splice(index, 1);
+  },
+  openModal(state, article) {
+    state.modalOpen = true;
+    state.viewedArticle = article;
+  },
+  closeModal(state, article) {
+    state.modalOpen = false;
+    state.viewedArticle = article;
   }
 };
