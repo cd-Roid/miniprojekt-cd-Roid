@@ -2,16 +2,6 @@ export default {
   setData(state, data) {
     state.data = data;
   },
-  group(state, data) {
-    data = state.data;
-    const arr = [];
-    for (let index = 1520; index <= 1600; index++) {
-      let element = data.filter(items => items.dating.begin == index);
-      arr[index] = { element };
-    }
-    const filtered = arr.filter(items => items.element != 0);
-    state.filtered = filtered;
-  },
   destructure(state, data) {
     data = state.data;
     const destructured = [];
