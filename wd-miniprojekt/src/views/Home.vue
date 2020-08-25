@@ -1,29 +1,32 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <div v-for="article in articles" :key="article.objectId">
-      {{ article.titles[0].title }} - {{ article.sortingNumber}}
-    </div>
-    <HelloWorld></HelloWorld>
+    <Year />
   </div>
 </template>
 
 <script>
-import HelloWorld from "@/components/HelloWorld.vue";
 import { mapState, mapActions } from "vuex";
+import Year from "../components/Year";
 export default {
   name: "Home",
   components: {
-    HelloWorld
+    Year
   },
   computed: {
-    ...mapState({ articles: state => state.data_en })
+    ...mapState({ articles: state => state.data })
   },
   methods: {
-    ...mapActions(["fetchDataEnglish"])
+    ...mapActions(["setData", "destructure"])
   },
   created() {
-    this.fetchDataEnglish();
+    this.setData("en");
+    this.destructure();
   }
 };
 </script>
+<style lang="scss">
+@import "../styles/_variables.scss";
+.home {
+  padding: 10% 15%;
+}
+</style>

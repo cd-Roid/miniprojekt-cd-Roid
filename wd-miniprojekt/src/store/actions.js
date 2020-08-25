@@ -2,15 +2,22 @@ import german from "../../json/cda-paintings-v2.de.json";
 import english from "../../json/cda-paintings-v2.en.json";
 
 export default {
-  groupByYear({ commit }, lang) {
+  setData({ commit }, lang) {
     if (lang === "en") {
       const data = english.items;
-      commit("group", data);
+      commit("setData", data);
     } else if (lang === "de") {
       const data = german.items;
-      commit("group", data);
+      commit("setData", data);
     } else {
       console.error("no language specified!");
     }
+  },
+  destructure({ commit }) {
+    commit("destructure");
+  },
+  removeImg({ commit }) {
+    commit("removeImg");
+    commit("destructure");
   }
 };
