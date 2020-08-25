@@ -3,5 +3,6 @@ export default {
   data: [],
   years: [],
   modalOpen: Boolean,
-  viewedArticle: null
+  viewedArticle: null,
+  count: Number
 };

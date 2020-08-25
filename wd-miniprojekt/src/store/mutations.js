@@ -24,7 +24,6 @@ export default {
         title: element.titles[0].title,
         repository: element.repository,
         description: element.description
-
       };
       destructured.push(prop);
       if (state.years.includes(prop.dating) === false) {
