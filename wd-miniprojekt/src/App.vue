@@ -9,7 +9,7 @@
   font-family: Source Sans Pro;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: $grey-dark;
+  color: $grey-darker;
 }
 
 #nav {

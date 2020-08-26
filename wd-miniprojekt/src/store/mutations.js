@@ -1,6 +1,7 @@
 export default {
-  setData(state, data) {
+  setData(state, { data, lang }) {
     state.data = data;
+    state.selectedLang = lang;
   },
   destructure(state, data) {
     data = state.data;
@@ -38,5 +39,14 @@ export default {
   closeModal(state, article) {
     state.modalOpen = false;
     state.viewedArticle = article;
+  },
+  openLangModal(state) {
+    state.langOpen = true;
+  },
+  closeLangModal(state) {
+    state.langOpen = false;
+  },
+  emptyFiltered(state) {
+    state.filtered = [];
   }
 };

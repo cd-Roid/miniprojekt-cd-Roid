@@ -3,6 +3,11 @@ export default {
   data: [],
   years: [],
   modalOpen: Boolean,
+  langOpen: Boolean,
   viewedArticle: null,
-  count: Number
+  language: [
+    { id: 1, lang: "Deutsch" },
+    { id: 2, lang: "English" }
+  ],
+  selectedLang: "Deutsch"
 };

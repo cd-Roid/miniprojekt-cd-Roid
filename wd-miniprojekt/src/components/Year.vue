@@ -1,8 +1,11 @@
 <template>
   <div>
     <div class="yearSection" v-for="year in years" :key="year">
-      <p class="yearSection-date">{{ year }}</p>
-      <CardList class="yearSection-cardList" :articles="orderByYear(year)" />
+      <YearStat :year="year" :count="orderByYear(year).count" />
+      <CardList
+        class="yearSection__cardList"
+        :articles="orderByYear(year).cardInput"
+      />
     </div>
   </div>
 </template>
@@ -10,10 +13,12 @@
 <script>
 import { mapState } from "vuex";
 import CardList from "../components/CardList";
+import YearStat from "../components/YearStats";
 export default {
   name: "Year",
   components: {
-    CardList
+    CardList,
+    YearStat
   },
   computed: {
     ...mapState({
@@ -25,7 +30,8 @@ export default {
     orderByYear(year) {
       let cardInput = {};
       cardInput = this.article.find(item => item[0].dating == year);
-      return cardInput;
+      const count = cardInput.length;
+      return { cardInput, count };
     }
   }
 };
@@ -36,11 +42,7 @@ export default {
 .yearSection {
   display: flex;
   flex-direction: column;
-  &-date {
-    font-size: $desktop-header;
-    background-color: $grey-lightest;
-  }
-  &-cardList {
+  &__cardList {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;

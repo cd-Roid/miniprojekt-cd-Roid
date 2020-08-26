@@ -3,18 +3,20 @@ import english from "../../json/cda-paintings-v2.en.json";
 
 export default {
   setData({ commit }, lang) {
-    if (lang === "en") {
+    if (lang === "English") {
       const data = english.items;
-      commit("setData", data);
-    } else if (lang === "de") {
+      commit("setData", { data, lang });
+      commit("destructure", data);
+    } else if (lang === "Deutsch") {
       const data = german.items;
-      commit("setData", data);
+      commit("setData", { data, lang });
+      commit("destructure", data);
     } else {
       console.error("no language specified!");
     }
   },
-  destructure({ commit }) {
-    commit("destructure");
+  destructure({ commit }, data) {
+    commit("destructure", data);
   },
   removeImg({ commit }) {
     commit("removeImg");
@@ -25,5 +27,14 @@ export default {
   },
   closeModal({ commit }, article) {
     commit("closeModal", article);
+  },
+  openLangModal({ commit }) {
+    commit("openLangModal");
+  },
+  closeLangModal({ commit }) {
+    commit("closeLangModal");
+  },
+  emptyFiltered({ commit }) {
+    commit("emptyFiltered");
   }
 };

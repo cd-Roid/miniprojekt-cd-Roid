@@ -31,15 +31,15 @@ export default {
 <style lang="scss">
 @import "../styles/_variables.scss";
 .modal {
-  position: fixed;
+  color: $grey;
+  background-color: $grey-dark;
   display: flex;
   flex-direction: row;
-  z-index: 1;
-  background-color: $grey-dark;
-  width: 940px;
   height: 460px;
-  color: $grey;
-  top: 28%;
   left: 33%;
+  position: fixed;
+  top: 28%;
+  width: 940px;
+  z-index: 1;
 }
 </style>
