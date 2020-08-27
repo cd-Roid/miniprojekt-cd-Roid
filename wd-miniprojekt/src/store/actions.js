@@ -5,12 +5,16 @@ export default {
   setData({ commit }, lang) {
     if (lang === "English") {
       const data = english.items;
+      const langList = [{ id: 1, lang: "Deutsch" }];
       commit("setData", { data, lang });
       commit("destructure", data);
+      commit("setLangList", langList);
     } else if (lang === "Deutsch") {
       const data = german.items;
+      const langList = [{ id: 1, lang: "English" }];
       commit("setData", { data, lang });
       commit("destructure", data);
+      commit("setLangList", langList);
     } else {
       console.error("no language specified!");
     }

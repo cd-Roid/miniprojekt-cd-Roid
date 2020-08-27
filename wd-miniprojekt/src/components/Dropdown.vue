@@ -5,15 +5,16 @@
       <span class="material-icons material-icons--arrow">arrow_drop_down</span>
     </div>
     <div v-if="isOpen == true">
-      <div
-        @click="setLanguage(language.lang)"
-        class="dropdown__items"
-        href="#"
-        v-for="language in languages"
-        :key="language.id"
-      >
-        {{ language.lang }}
-      </div>
+      <ul class="dropdown__items">
+        <li
+          @click="setLanguage(language.lang)"
+          href="#"
+          v-for="language in languages"
+          :key="language.id"
+        >
+          {{ language.lang }}
+        </li>
+      </ul>
     </div>
   </div>
 </template>
@@ -21,7 +22,7 @@
 <script>
 import { mapActions, mapState } from "vuex";
 export default {
-  name: "LanguageDropdown",
+  name: "Dropdown",
   computed: {
     ...mapState({
       languages: state => state.language,
@@ -52,28 +53,25 @@ export default {
 <style lang="scss">
 @import "../styles/_variables.scss";
 .dropdown {
-  display: flex;
-  flex-direction: column;
   padding: 20px 15px;
   margin: auto 15%;
-  width: max-content;
-  &__items {
-    transform: translateY(30%);
-    height: 28px;
-    padding: 5px 15px;
-    border: 1px solid $grey-light;
-    background-color: $grey;
-    max-width: inherit;
-  }
+  max-width: max-content;
   &__selected {
     display: flex;
-    transform: translateY(30%);
     height: 28px;
     padding: 5px;
     border: 1px solid $grey-light;
     background-color: $grey;
     max-width: inherit;
     margin: auto;
+  }
+  &__items {
+    position: absolute;
+    height: max-content;
+    padding: 5px 14.5px;
+    border: 1px solid $grey-light;
+    background-color: $grey;
+    width: 60px;
   }
 }
 .material-icons--arrow {

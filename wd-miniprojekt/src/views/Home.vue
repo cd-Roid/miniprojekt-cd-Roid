@@ -13,7 +13,7 @@
 import { mapState, mapActions } from "vuex";
 import ExtendedCard from "../components/CardModal";
 import Year from "../components/Year";
-import Dropdown from "../components/LanguageSelect";
+import Dropdown from "../components/Dropdown";
 export default {
   name: "Home",
   components: {

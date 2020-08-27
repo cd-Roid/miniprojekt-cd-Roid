@@ -3,6 +3,9 @@ export default {
     state.data = data;
     state.selectedLang = lang;
   },
+  setLangList(state, langList) {
+    state.language = langList;
+  },
   destructure(state, data) {
     data = state.data;
     const destructured = [];
