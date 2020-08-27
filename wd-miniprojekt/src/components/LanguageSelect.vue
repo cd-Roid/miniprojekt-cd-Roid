@@ -2,6 +2,7 @@
   <div class="dropdown">
     <div class="dropdown__selected" @click="open">
       {{ selected }}
+      <span class="material-icons material-icons--arrow">arrow_drop_down</span>
     </div>
     <div v-if="isOpen == true">
       <div
@@ -60,17 +61,23 @@ export default {
     transform: translateY(30%);
     height: 28px;
     padding: 5px 15px;
-    border: 1px solid #000000;
+    border: 1px solid $grey-light;
     background-color: $grey;
     max-width: inherit;
   }
   &__selected {
+    display: flex;
     transform: translateY(30%);
     height: 28px;
-    padding: 5px 15px;
-    border: 1px solid #000000;
+    padding: 5px;
+    border: 1px solid $grey-light;
     background-color: $grey;
     max-width: inherit;
+    margin: auto;
   }
+}
+.material-icons--arrow {
+  margin: auto;
+  padding-bottom: 10px;
 }
 </style>

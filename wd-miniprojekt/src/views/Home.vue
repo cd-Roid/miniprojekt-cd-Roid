@@ -55,6 +55,7 @@ export default {
     color: #000000;
     max-width: 100%;
     margin-left: 15%;
+    margin-top: 20px;
   }
 }
 </style>

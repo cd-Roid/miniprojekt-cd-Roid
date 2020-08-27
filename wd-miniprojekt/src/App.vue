@@ -4,6 +4,7 @@
   </div>
 </template>
 <style lang="scss">
+@import "./styles/_reset.scss";
 @import "./styles/_variables.scss";
 #app {
   font-family: Source Sans Pro;

@@ -1,9 +1,9 @@
 <template>
   <div>
     <div class="yearSection" v-for="year in years" :key="year">
-      <YearStat :year="year" :count="orderByYear(year).count" />
-      <CardList
-        class="yearSection__cardList"
+      <YearAccordion
+        :year="year"
+        :count="orderByYear(year).count"
         :articles="orderByYear(year).cardInput"
       />
     </div>
@@ -12,18 +12,17 @@
 
 <script>
 import { mapState } from "vuex";
-import CardList from "../components/CardList";
-import YearStat from "../components/YearStats";
+import YearAccordion from "../components/YearAccordion";
 export default {
   name: "Year",
   components: {
-    CardList,
-    YearStat
+    YearAccordion
   },
   computed: {
     ...mapState({
       years: state => state.years,
-      article: state => state.filtered
+      article: state => state.filtered,
+      show: state => state.accordionOpen
     })
   },
   methods: {
