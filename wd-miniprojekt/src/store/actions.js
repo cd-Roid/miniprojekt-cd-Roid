@@ -6,13 +6,13 @@ export default {
     if (lang === "English") {
       const data = english.items;
       const langList = [{ id: 1, lang: "Deutsch" }];
-      commit("setData", { data, lang });
+      commit("mutateData", { data, lang });
       commit("destructure", data);
       commit("setLangList", langList);
     } else if (lang === "Deutsch") {
       const data = german.items;
       const langList = [{ id: 1, lang: "English" }];
-      commit("setData", { data, lang });
+      commit("mutateData", { data, lang });
       commit("destructure", data);
       commit("setLangList", langList);
     } else {
@@ -40,5 +40,14 @@ export default {
   },
   emptyFiltered({ commit }) {
     commit("emptyFiltered");
+  },
+  previousArticle({ commit }) {
+    commit("previous");
+  },
+  nextArticle({ commit }) {
+    commit("next");
+  },
+  likeArticle({ commit }) {
+    commit("addToLiked");
   }
 };

@@ -55,14 +55,14 @@ export default {
 .dropdown {
   padding: 20px 15px;
   margin: auto 15%;
-  max-width: max-content;
+  max-width: 80px;
   &__selected {
     display: flex;
     height: 28px;
     padding: 5px;
     border: 1px solid $grey-light;
     background-color: $grey;
-    max-width: inherit;
+    width: 80px;
     margin: auto;
   }
   &__items {
@@ -71,7 +71,7 @@ export default {
     padding: 5px 14.5px;
     border: 1px solid $grey-light;
     background-color: $grey;
-    width: 60px;
+    width: 61px;
   }
 }
 .material-icons--arrow {
