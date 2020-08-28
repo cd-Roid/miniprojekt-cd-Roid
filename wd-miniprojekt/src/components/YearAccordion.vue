@@ -3,10 +3,10 @@
     <div class="accordion">
       <p class="accordion__date">{{ year }}</p>
       <div class="accordion__line"></div>
-      <span class="material-icons material-icons--custom">photo</span>
+      <span class="material-icons material-icons__img-icon">photo</span>
       <p class="accordion__count">{{ count }}</p>
       <div class="accordion__line"></div>
-      <span class="material-icons material-icons--arrowdown" @click="toggle">
+      <span class="material-icons material-icons__arrowdown" @click="toggle">
         {{ arrowValue }}
       </span>
     </div>
@@ -68,18 +68,18 @@ export default {
     color: $grey-light;
   }
   &__line {
-    width: 40%;
+    width: 38%;
     height: 0;
     border: 1px solid #c4c4c4;
     margin: auto;
   }
 }
 .material-icons {
-  &--custom {
+  &__img-icon {
     color: $grey-light;
     margin: auto;
   }
-  &--arrowdown {
+  &__arrowdown {
     margin: auto;
     font-size: $desktop-logo;
   }
