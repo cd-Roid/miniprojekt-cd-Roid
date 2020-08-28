@@ -76,8 +76,8 @@ export default {
     }
   }
   .content {
-    padding: 0px;
-    width: auto;
+    margin-left: 2%;
+    width: 100vw;
     &__year {
       width: 100%;
     }
