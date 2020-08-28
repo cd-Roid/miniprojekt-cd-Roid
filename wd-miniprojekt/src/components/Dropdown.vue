@@ -2,7 +2,7 @@
   <div class="dropdown">
     <div class="dropdown__selected" @click="open">
       {{ selected }}
-      <span class="material-icons material-icons--arrow">arrow_drop_down</span>
+      <span class="material-icons material-icons__arrow">arrow_drop_down</span>
     </div>
     <div v-if="isOpen == true">
       <ul class="dropdown__items">
@@ -53,8 +53,9 @@ export default {
 <style lang="scss">
 @import "../styles/_variables.scss";
 .dropdown {
-  padding: 20px 15px;
-  margin: auto 15%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: calc((100vw - 940px) / 2);
   max-width: 80px;
   &__selected {
     display: flex;
@@ -64,6 +65,9 @@ export default {
     background-color: $grey;
     width: 80px;
     margin: auto;
+    &:hover {
+      cursor: pointer;
+    }
   }
   &__items {
     position: absolute;
@@ -72,9 +76,12 @@ export default {
     border: 1px solid $grey-light;
     background-color: $grey;
     width: 61px;
+    &:hover {
+      cursor: pointer;
+    }
   }
 }
-.material-icons--arrow {
+.material-icons__arrow {
   margin: auto;
   padding-bottom: 10px;
 }
