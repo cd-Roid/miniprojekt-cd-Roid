@@ -1,11 +1,11 @@
 <template>
-  <div class="home">
+  <div>
     <nav class="header">
       <p class="header__logo">CDA_</p>
-      <Dropdown></Dropdown>
+      <Dropdown />
     </nav>
     <section class="content">
-      <Year class="year" />
+      <Year class="content__year" />
     </section>
     <ExtendedCard v-if="isVisible === true" :article="toView" />
   </div>
@@ -34,7 +34,7 @@ export default {
   methods: {
     ...mapActions(["setData"])
   },
-  beforeMount() {
+  created() {
     let currentLang = this.selectedLang;
     this.setData(currentLang);
   }
@@ -42,17 +42,18 @@ export default {
 </script>
 <style lang="scss">
 @import "../styles/_variables.scss";
-.year {
-  position: relative;
-  grid-column: 1/end;
-}
+
 .content {
   display: grid;
   grid-template-columns: repeat(12, 60px);
   grid-column: span;
   grid-gap: 20px;
-  padding-left: calc((100vw - 940px)/ 2);
-  padding-right: calc((100vw - 940px)/ 2);
+  padding-left: calc((100vw - 940px) / 2);
+  padding-right: calc((100vw - 940px) / 2);
+  &__year {
+    position: relative;
+    grid-column: 1 / end;
+  }
 }
 .header {
   border-bottom: 1px solid $grey-darker;
@@ -64,8 +65,10 @@ export default {
     font-weight: bold;
     color: #000000;
     max-width: 100%;
-    margin-left: 15%;
     margin-top: 20px;
+    margin-left: calc((100vw - 940px) / 2);
+    margin-right: calc((100vw - 940px) / 2);
+    margin-bottom: 20px;
   }
 }
 </style>
