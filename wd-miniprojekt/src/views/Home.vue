@@ -44,10 +44,6 @@ export default {
 @import "../styles/_variables.scss";
 
 .content {
-  display: grid;
-  grid-template-columns: repeat(12, 60px);
-  grid-column: span;
-  grid-gap: 20px;
   padding-left: calc((100vw - 940px) / 2);
   padding-right: calc((100vw - 940px) / 2);
   &__year {
@@ -69,6 +65,22 @@ export default {
     margin-left: calc((100vw - 940px) / 2);
     margin-right: calc((100vw - 940px) / 2);
     margin-bottom: 20px;
+  }
+}
+@media (max-width: 768px) {
+  .header {
+    width: 105%;
+    overflow: hidden;
+    &__logo {
+      margin: 20px;
+    }
+  }
+  .content {
+    padding: 0px;
+    width: auto;
+    &__year {
+      width: 100%;
+    }
   }
 }
 </style>
