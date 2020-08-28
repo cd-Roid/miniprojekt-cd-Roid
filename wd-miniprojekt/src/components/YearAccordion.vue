@@ -66,9 +66,12 @@ export default {
     font-size: $desktop-fliestext;
     margin: auto;
     color: $grey-light;
+    &:hover {
+      cursor: default;
+    }
   }
   &__line {
-    width: 38%;
+    width: 34%;
     height: 0;
     border: 1px solid #c4c4c4;
     margin: auto;
@@ -78,10 +81,16 @@ export default {
   &__img-icon {
     color: $grey-light;
     margin: auto;
+    &:hover {
+      cursor: default;
+    }
   }
   &__arrowdown {
     margin: auto;
     font-size: $desktop-logo;
+    &:hover {
+      cursor: pointer;
+    }
   }
 }
 </style>
