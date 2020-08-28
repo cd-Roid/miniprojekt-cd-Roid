@@ -59,7 +59,7 @@ export default {
   &__selected {
     display: flex;
     height: 28px;
-    padding: 5px;
+    padding: 5px 5px 0px 5px;
     border: 1px solid $grey-light;
     background-color: $grey;
     width: 80px;
@@ -68,7 +68,7 @@ export default {
   &__items {
     position: absolute;
     height: max-content;
-    padding: 5px 14.5px;
+    padding: 8px 14.5px;
     border: 1px solid $grey-light;
     background-color: $grey;
     width: 61px;
