@@ -4,7 +4,9 @@
       <p class="header__logo">CDA_</p>
       <Dropdown></Dropdown>
     </nav>
-    <Year class="year" />
+    <section class="content">
+      <Year class="year" />
+    </section>
     <ExtendedCard v-if="isVisible === true" :article="toView" />
   </div>
 </template>
@@ -41,8 +43,16 @@ export default {
 <style lang="scss">
 @import "../styles/_variables.scss";
 .year {
-  padding: 1% 15%;
   position: relative;
+  grid-column: 1/end;
+}
+.content {
+  display: grid;
+  grid-template-columns: repeat(12, 60px);
+  grid-column: span;
+  grid-gap: 20px;
+  padding-left: calc((100vw - 940px)/ 2);
+  padding-right: calc((100vw - 940px)/ 2);
 }
 .header {
   border-bottom: 1px solid $grey-darker;
