@@ -1,10 +1,6 @@
 <template>
   <div>
-    <div
-      class="cardContainer"
-      v-for="article in articles"
-      :key="article.objectId"
-    >
+    <div v-for="article in articles" :key="article.objectId">
       <Card :article="article" />
     </div>
   </div>
@@ -22,11 +18,3 @@ export default {
   }
 };
 </script>
-
-<style lang="scss">
-@import "../styles/_variables.scss";
-.cardContainer {
-  display: flex;
-  flex-direction: column;
-}
-</style>
