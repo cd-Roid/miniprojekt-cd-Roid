@@ -85,4 +85,9 @@ export default {
   margin: auto;
   padding-bottom: 10px;
 }
+@media (max-width: 768px) {
+  .dropdown {
+    margin-right: 40px;
+  }
+}
 </style>
