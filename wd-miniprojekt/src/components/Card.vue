@@ -1,9 +1,9 @@
 <template>
   <div class="card">
     <img
-      class="card-img"
+      class="card__img"
       @error="setPlaceholder"
-      v-bind:src="article.images.sizes.s.src"
+      v-bind:src="article.images.sizes.xs.src"
       v-bind:alt="article.title"
       @click="modalAction(article)"
     />
@@ -38,10 +38,13 @@ export default {
 .card {
   margin: $_desktop-gutter;
   overflow: hidden;
-  &-img {
+  &__img {
     width: $desktop-image-size;
     height: $desktop-image-size;
     object-fit: cover;
+    &:hover {
+      cursor: pointer;
+    }
   }
 }
 </style>
