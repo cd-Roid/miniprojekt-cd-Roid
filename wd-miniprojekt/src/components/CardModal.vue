@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <div class="screen">
     <div class="background" @click="close"></div>
     <div class="modal">
       <section class="modal__section__button" @click="close">
         <i>
-          <span class="material-icons material-icons--close">close</span>
+          <span class="material-icons material-icons__close">close</span>
         </i>
       </section>
       <section class="modal__section__imagebox">
@@ -91,9 +91,16 @@ export default {
 .background {
   position: fixed;
   background: rgba(0, 0, 0, 0.8);
-  width: 100%;
-  height: 100vh;
+  width: 200%;
+  height: 100%;
   top: 0;
+  display: flex;
+  align-self: center;
+}
+.screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .modal {
   color: $grey;
@@ -102,9 +109,8 @@ export default {
   display: flex;
   flex-direction: row;
   height: 460px;
-  left: 25%;
+  top: 25%;
   position: fixed;
-  top: 20%;
   width: 940px;
   z-index: 1;
 
@@ -124,7 +130,7 @@ export default {
         &__text {
           overflow: scroll;
           height: 200px;
-          margin-bottom: 20px;
+          padding-bottom: 10px;
           padding-top: 20px;
           &::-webkit-scrollbar {
             display: none;
@@ -151,26 +157,34 @@ export default {
       width: 24px;
     }
     &__stats {
-      margin-top: auto;
+      position: absolute;
+      bottom: 20px;
       &__repository,
       &__dimensions {
         margin-bottom: 20px;
       }
     }
     &__interaction {
+      position: fixed;
       height: fit-content;
       width: 100px;
       position: absolute;
+      bottom: 20px;
       right: 20px;
       display: flex;
       justify-content: space-between;
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 
   .material-icons {
-    &--close {
+    &__close {
       color: $grey-darker;
     }
   }
 }
+
+
 </style>
