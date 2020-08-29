@@ -77,12 +77,6 @@ export default {
     state.modalOpen = false;
     state.viewedArticle = article;
   },
-  openLangModal(state) {
-    state.langOpen = true;
-  },
-  closeLangModal(state) {
-    state.langOpen = false;
-  },
   emptyFiltered(state) {
     state.filtered = [];
   },

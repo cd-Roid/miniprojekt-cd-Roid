@@ -1,10 +1,10 @@
 <template>
   <div class="dropdown">
-    <div class="dropdown__selected" @click="open">
+    <div class="dropdown__selected" @click="toggle">
       {{ selected }}
       <span class="material-icons material-icons__arrow">arrow_drop_down</span>
     </div>
-    <div v-if="isOpen == true">
+    <div v-if="show == true">
       <ul class="dropdown__items">
         <li
           @click="setLanguage(language.lang)"
@@ -23,26 +23,24 @@
 import { mapActions, mapState } from "vuex";
 export default {
   name: "Dropdown",
+  data() {
+    return {
+      show: false
+    };
+  },
   computed: {
     ...mapState({
       languages: state => state.language,
-      isOpen: state => state.langOpen,
       selected: state => state.selectedLang
     })
   },
   methods: {
-    ...mapActions([
-      "setData",
-      "openLangModal",
-      "closeLangModal",
-      "destructure",
-      "emptyFiltered"
-    ]),
-    open() {
-      this.openLangModal();
+    ...mapActions(["setData", "destructure", "emptyFiltered"]),
+    toggle() {
+      this.show = !this.show;
     },
     setLanguage(lang) {
-      this.closeLangModal();
+      this.show = false;
       this.emptyFiltered();
       this.setData(lang);
       this.destructure();

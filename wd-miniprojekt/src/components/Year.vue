@@ -21,8 +21,7 @@ export default {
   computed: {
     ...mapState({
       years: state => state.years,
-      article: state => state.filtered,
-      show: state => state.accordionOpen
+      article: state => state.filtered
     })
   },
   methods: {

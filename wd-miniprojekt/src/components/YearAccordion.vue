@@ -6,9 +6,9 @@
       <span class="material-icons material-icons__img-icon">photo</span>
       <p class="accordion__count">{{ count }}</p>
       <div class="accordion__line"></div>
-      <span class="material-icons material-icons__arrowdown">
-        {{ arrowValue }}
-      </span>
+      <span class="material-icons material-icons__arrowdown">{{
+        arrowValue
+      }}</span>
     </div>
     <CardList
       v-if="collapseAllItems"
@@ -81,6 +81,9 @@ export default {
     border: 1px solid #c4c4c4;
     margin: auto;
   }
+  &:hover {
+    cursor: pointer;
+  }
 }
 .yearSection {
   &__cardList {
@@ -95,16 +98,10 @@ export default {
   &__img-icon {
     color: $grey-light;
     margin: auto;
-    &:hover {
-      cursor: default;
-    }
   }
   &__arrowdown {
     margin: auto;
     font-size: $desktop-logo;
-    &:hover {
-      cursor: pointer;
-    }
   }
 }
 

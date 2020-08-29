@@ -66,12 +66,8 @@ export default {
       this.closeModal();
     },
     setPlaceholder() {
-      if (this.article.images === null) {
-        this.removeImg();
-      } else {
-        const link = "https://via.placeholder.com/300";
-        event.target.src = link;
-      }
+      const link = "https://via.placeholder.com/300";
+      event.target.src = link;
     },
     prev() {
       this.previousArticle();
@@ -200,18 +196,20 @@ export default {
         width: 100%;
       }
       &__description {
-        height: 50%;
+        height: 48%;
         width: 100vw;
         position: absolute;
         padding: 10px;
         bottom: 0px;
         font-size: $mobile-fliestext;
+        overflow: scroll;
         &__sub {
           &__title {
             font-size: $mobile-title;
           }
           &__text {
-            height: 120px;
+            height: max-content;
+            padding-right: 10px;
           }
         }
       }
@@ -220,13 +218,17 @@ export default {
         right: 10px;
       }
       &__stats {
+        position: relative;
+        margin-top: 40px;
         &__inventoryNumber {
           font-size: $mobile-card-id;
         }
       }
       &__interaction {
-        top: -30px;
-        width: 100vw;
+        position: fixed;
+        top: 43%;
+        width: 90vw;
+        //z-index: 1;
       }
     }
   }

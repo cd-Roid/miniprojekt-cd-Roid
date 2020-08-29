@@ -22,21 +22,11 @@ export default {
   destructure({ commit }, data) {
     commit("destructure", data);
   },
-  removeImg({ commit }) {
-    commit("removeImg");
-    commit("destructure");
-  },
   openModal({ commit }, article) {
     commit("openModal", article);
   },
   closeModal({ commit }, article) {
     commit("closeModal", article);
-  },
-  openLangModal({ commit }) {
-    commit("openLangModal");
-  },
-  closeLangModal({ commit }) {
-    commit("closeLangModal");
   },
   emptyFiltered({ commit }) {
     commit("emptyFiltered");

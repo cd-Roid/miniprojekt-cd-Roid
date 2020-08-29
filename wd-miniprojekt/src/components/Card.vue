@@ -20,12 +20,8 @@ export default {
   methods: {
     ...mapActions(["removeImg", "openModal"]),
     setPlaceholder() {
-      if (this.article.images === null) {
-        this.removeImg();
-      } else {
-        const link = "https://via.placeholder.com/300";
-        event.target.src = link;
-      }
+      const link = "https://via.placeholder.com/300";
+      event.target.src = link;
     },
     modalAction(article) {
       this.openModal(article);
