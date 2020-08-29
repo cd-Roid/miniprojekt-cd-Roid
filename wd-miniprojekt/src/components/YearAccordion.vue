@@ -11,6 +11,7 @@
       </span>
     </div>
     <CardList
+      v-if="collapseAllItems"
       v-show="show"
       class="yearSection__cardList"
       :articles="articles"
@@ -19,6 +20,7 @@
 </template>
 <script>
 import CardList from "../components/CardList";
+import { mapState } from "vuex";
 export default {
   name: "YearAccordion",
   components: {
@@ -46,6 +48,9 @@ export default {
         this.arrowValue = this.arrowDown;
       }
     }
+  },
+  computed: {
+    ...mapState({ collapseAllItems: state => state.collapsed })
   }
 };
 </script>
@@ -80,9 +85,8 @@ export default {
 .yearSection {
   &__cardList {
     display: grid;
-    grid-template-columns: repeat(12, 60px);
+    grid-template-columns: repeat(6, $desktop-image-size);
     grid-gap: $_desktop-gutter;
-    justify-content: center;
     margin-top: 3px;
     margin-bottom: 3px;
   }
@@ -131,13 +135,14 @@ export default {
       margin-right: 10px;
     }
   }
-  .yearSection__cardList {
-    display: grid;
-    grid-template-columns: repeat(3, $_mobile-grid);
-    grid-gap: 3px;
-    justify-content: center;
-    margin-top: 3px;
-    margin-bottom: 3px;
+  .yearSection {
+    &__cardList {
+      display: grid;
+      grid-template-columns: repeat(3, $_mobile-grid);
+      grid-gap: 2px;
+      margin-top: 3px;
+      margin-bottom: 3px;
+    }
   }
 }
 </style>

@@ -39,7 +39,7 @@
         </section>
         <section class="modal__section__interaction">
           <span class="material-icons" @click="prev">arrow_back</span>
-          <span class="material-icons" @click="like"> favorite_border</span>
+          <span class="material-icons" @click="like">favorite_border</span>
           <span class="material-icons" @click="next">arrow_forward</span>
         </section>
       </section>
@@ -163,6 +163,9 @@ export default {
       &__dimensions {
         margin-bottom: 20px;
       }
+      &__inventoryNumber {
+        font-size: $desktop-card-id;
+      }
     }
     &__interaction {
       position: fixed;
@@ -187,8 +190,45 @@ export default {
 }
 
 @media (max-width: 768px) {
-  .dropdown {
-    display: none;
+  .modal {
+    width: 100%;
+    height: 100vh;
+    top: 0px;
+    &__section {
+      &__imagebox {
+        height: 42%;
+        width: 100%;
+      }
+      &__description {
+        height: 50%;
+        width: 100vw;
+        position: absolute;
+        padding: 10px;
+        bottom: 0px;
+        font-size: $mobile-fliestext;
+        &__sub {
+          &__title {
+            font-size: $mobile-title;
+          }
+          &__text {
+            height: 120px;
+          }
+        }
+      }
+      &__button {
+        top: 10px;
+        right: 10px;
+      }
+      &__stats {
+        &__inventoryNumber {
+          font-size: $mobile-card-id;
+        }
+      }
+      &__interaction {
+        top: -30px;
+        width: 100vw;
+      }
+    }
   }
 }
 </style>

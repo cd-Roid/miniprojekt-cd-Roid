@@ -5,7 +5,7 @@
       <Dropdown />
       <span
         class="material-icons material-icons__collapse-all"
-        @click="collapse"
+        @click="collapseAllItems"
         >menu</span
       >
     </nav>
@@ -38,7 +38,7 @@ export default {
   },
   methods: {
     ...mapActions(["setData", "collapseAll"]),
-    collapse() {
+    collapseAllItems() {
       this.collapseAll();
     }
   },

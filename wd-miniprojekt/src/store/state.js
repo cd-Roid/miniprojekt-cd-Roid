@@ -8,5 +8,5 @@ export default {
   langOpen: Boolean,
   viewedArticle: null,
   selectedLang: "Deutsch",
-  collapsed: false
+  collapsed: true
 };
