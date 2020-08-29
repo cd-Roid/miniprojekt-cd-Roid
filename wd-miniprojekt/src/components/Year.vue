@@ -35,16 +35,3 @@ export default {
   }
 };
 </script>
-
-<style lang="scss">
-@import "../styles/_variables.scss";
-.yearSection {
-  display: flex;
-  flex-direction: column;
-  &__cardList {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-}
-</style>
