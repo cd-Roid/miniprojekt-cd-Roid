@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <div>
     <img
       class="card__img"
       @error="setPlaceholder"
@@ -33,28 +33,3 @@ export default {
   }
 };
 </script>
-<style lang="scss">
-@import "../styles/_variables.scss";
-.card {
-  margin: $_desktop-gutter;
-  overflow: hidden;
-  &__img {
-    width: $desktop-image-size;
-    height: $desktop-image-size;
-    object-fit: cover;
-    &:hover {
-      cursor: pointer;
-    }
-  }
-}
-@media (max-width: 768px) {
-  .card {
-    margin: 0;
-    &__img {
-      grid-column-end: 2;
-      object-fit: cover;
-      width: 100%;
-    }
-  }
-}
-</style>
