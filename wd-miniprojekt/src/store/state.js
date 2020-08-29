@@ -7,5 +7,6 @@ export default {
   modalOpen: Boolean,
   langOpen: Boolean,
   viewedArticle: null,
-  selectedLang: "Deutsch"
+  selectedLang: "Deutsch",
+  collapsed: true
 };

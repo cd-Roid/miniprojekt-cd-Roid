@@ -47,4 +47,14 @@ export default {
     }
   }
 }
+@media (max-width: 768px) {
+  .card {
+    margin: 0;
+    &__img {
+      grid-column-end: 2;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+}
 </style>

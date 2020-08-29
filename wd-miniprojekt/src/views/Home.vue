@@ -3,6 +3,11 @@
     <nav class="header">
       <p class="header__logo">CDA_</p>
       <Dropdown />
+      <span
+        class="material-icons material-icons__collapse-all"
+        @click="collapse"
+        >menu</span
+      >
     </nav>
     <section class="content">
       <Year class="content__year" />
@@ -32,7 +37,10 @@ export default {
     })
   },
   methods: {
-    ...mapActions(["setData"])
+    ...mapActions(["setData", "collapseAll"]),
+    collapse() {
+      this.collapseAll();
+    }
   },
   created() {
     let currentLang = this.selectedLang;
@@ -67,19 +75,42 @@ export default {
     margin-bottom: 20px;
   }
 }
+.material-icons {
+  &__collapse-all {
+    display: none;
+  }
+}
+
 @media (max-width: 768px) {
   .header {
-    width: 105%;
-    overflow: hidden;
+    width: 100%;
+    position: fixed;
+    background-color: $grey;
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid $grey-darker;
+    border-bottom: 0;
+    z-index: 1;
     &__logo {
       margin: 20px;
     }
   }
   .content {
-    margin-left: 2%;
     width: 100vw;
     &__year {
       width: 100%;
+    }
+  }
+  @media (max-width: 768px) {
+    .material-icons {
+      &__collapse-all {
+        display: block;
+        font-size: $mobile-logo;
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
+      }
     }
   }
 }

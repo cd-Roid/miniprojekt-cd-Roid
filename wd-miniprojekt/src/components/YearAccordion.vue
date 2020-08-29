@@ -1,12 +1,12 @@
 <template>
   <div>
-    <div class="accordion">
+    <div class="accordion" @click="toggle">
       <p class="accordion__date">{{ year }}</p>
       <div class="accordion__line"></div>
       <span class="material-icons material-icons__img-icon">photo</span>
       <p class="accordion__count">{{ count }}</p>
       <div class="accordion__line"></div>
-      <span class="material-icons material-icons__arrowdown" @click="toggle">
+      <span class="material-icons material-icons__arrowdown">
         {{ arrowValue }}
       </span>
     </div>
@@ -91,6 +91,43 @@ export default {
     &:hover {
       cursor: pointer;
     }
+  }
+}
+
+@media (max-width: 768px) {
+  .accordion {
+    background-color: $grey-darker;
+    margin: 0;
+    &__date {
+      color: $white;
+      font-size: $mobile-logo;
+      margin: 20px;
+    }
+    &__line {
+      display: none;
+    }
+    &__count {
+      margin-right: 40px;
+      margin-left: 0px;
+      font-size: $mobile-logo;
+    }
+  }
+  .material-icons {
+    &__arrowdown {
+      display: none;
+    }
+    &__img-icon {
+      font-size: $mobile-title;
+      margin-right: 10px;
+    }
+  }
+  .yearSection__cardList {
+    display: grid !important;
+    grid-template-columns: repeat(3, $_mobile-grid);
+    grid-gap: 3px;
+    justify-content: center;
+    margin-top: 3px;
+    margin-bottom: 3px;
   }
 }
 </style>

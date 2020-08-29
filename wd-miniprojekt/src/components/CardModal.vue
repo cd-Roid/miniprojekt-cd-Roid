@@ -185,4 +185,10 @@ export default {
     }
   }
 }
+
+@media (max-width: 768px) {
+  .dropdown {
+    display: none;
+  }
+}
 </style>

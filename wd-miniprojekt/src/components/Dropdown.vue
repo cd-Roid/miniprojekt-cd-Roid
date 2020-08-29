@@ -87,7 +87,7 @@ export default {
 }
 @media (max-width: 768px) {
   .dropdown {
-    margin-right: 40px;
+    display: none;
   }
 }
 </style>

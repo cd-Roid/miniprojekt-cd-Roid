@@ -85,5 +85,8 @@ export default {
   },
   emptyFiltered(state) {
     state.filtered = [];
+  },
+  collapse(state) {
+    state.collapsed = !state.collapsed;
   }
 };

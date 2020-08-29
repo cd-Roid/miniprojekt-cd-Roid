@@ -49,5 +49,8 @@ export default {
   },
   likeArticle({ commit }) {
     commit("addToLiked");
+  },
+  collapseAll({ commit }) {
+    commit("collapse");
   }
 };
