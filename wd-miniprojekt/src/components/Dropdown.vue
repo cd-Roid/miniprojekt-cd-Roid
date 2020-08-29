@@ -57,6 +57,7 @@ export default {
   padding-bottom: 20px;
   padding-right: calc((100vw - 940px) / 2);
   max-width: 80px;
+  margin-right: 20px;
   &__selected {
     display: flex;
     height: 28px;
