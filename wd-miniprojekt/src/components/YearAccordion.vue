@@ -77,6 +77,16 @@ export default {
     margin: auto;
   }
 }
+.yearSection {
+  &__cardList {
+    display: grid;
+    grid-template-columns: repeat(12, 60px);
+    grid-gap: $_desktop-gutter;
+    justify-content: center;
+    margin-top: 3px;
+    margin-bottom: 3px;
+  }
+}
 .material-icons {
   &__img-icon {
     color: $grey-light;
@@ -122,7 +132,7 @@ export default {
     }
   }
   .yearSection__cardList {
-    display: grid !important;
+    display: grid;
     grid-template-columns: repeat(3, $_mobile-grid);
     grid-gap: 3px;
     justify-content: center;
