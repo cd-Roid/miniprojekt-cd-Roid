@@ -69,10 +69,9 @@ export default {
     font-weight: bold;
     color: #000000;
     max-width: 100%;
-    margin-top: 20px;
-    margin-left: calc((100vw - 940px) / 2);
-    margin-right: calc((100vw - 940px) / 2);
-    margin-bottom: 20px;
+    padding-top: 20px;
+    padding-left: calc((100vw - 940px) / 2);
+    padding-bottom: 20px;
   }
 }
 .material-icons {
@@ -93,7 +92,7 @@ export default {
     border-bottom: 0;
     z-index: 1;
     &__logo {
-      margin: 20px;
+      margin-left: 20px;
     }
   }
   .content {
