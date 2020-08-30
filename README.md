@@ -24,5 +24,18 @@ Im Rahmen des Moduls Frontend Developments wurde die Aufgabe gestellt eine Webse
   - [X] Funktionaler "Favorisieren" Button
   - [X] Desktop: Bei der Detailansicht kann rausnavigiert werden wenn auf den Hintergrund geklickt wird.
   
-  ## Framework Wahl 
-  Bei der Wahl des Framesworks gab es für mich nur eine Option, VueJS. Das Komponenten System in VueJS ist einfach zu verstehen und vereinfacht das entwickeln, da Komponenten als Templates genutzt werden können.
+  ## Framework 
+  Bei der Wahl des Framesworks gab es für mich nur eine Option, VueJS. Das Komponenten System in VueJS ist einfach zu verstehen und vereinfacht das entwickeln, da Komponenten als Templates genutzt werden können. Somit werden bestimmte Funktionen zu Komponenten die unabhängig voneinander entwickelt werden können. Vue zeigt seine Stärke besonders in Verbindung mit vuex bei State Management. Mit vuex haben wir ein "single source of truth" im Projekt. Mit vuex kann man sicher sein dass Daten richtig weitergegeben werden an die Komponenten und nicht verändert wurde. Ich wollte die chance Nutzen um Vue besser kennenzulernen und so ein großes Projekt hat sich gut dafür geeignet.
+  
+  ##  Probleme
+  
+ - Am Anfang der Entwicklungsphase ist mir aufgefallen dass viele Images nicht vorhanden waren da der cranach server mit dem Status 404 antwortete.
+  Lösung: 
+  
+  ### Platzhalter
+  Da die Anzahl an Artikel ohne Images recht groß war entschied ich mich dafür diese nicht zu löschen, sondern mit Platzhalter Images von [Placeholder](https://placeholder.com/) diese werden zu Laufzeit geändert, da ich nicht meine Zeit damit verbringen wollte die Daten mauell zu ändern. Ist auch keine realistische Lösung. 
+  
+  ### Images mit null Objekten
+  Einige Artikel hatten auch garkeine Links zu ihren Images. Diese werden ignoriert damit sie nicht nach dem Laden auch noch behandelt werden müssen.
+  
+ 
