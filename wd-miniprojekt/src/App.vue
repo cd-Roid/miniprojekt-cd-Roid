@@ -15,7 +15,7 @@ export default {
 @import "./styles/_reset.scss";
 @import "./styles/_variables.scss";
 #app {
-  font-family: Source Sans Pro;
+  font-family: "Source Sans Pro", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: $grey-darker;
