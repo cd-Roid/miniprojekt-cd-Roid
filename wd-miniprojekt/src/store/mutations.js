@@ -7,9 +7,8 @@ export default {
     state.language = langList;
   },
   destructure(state, data) {
-    data = state.data;
     const destructured = [];
-    data.forEach(element => {
+    data.items.forEach(element => {
       let prop = {
         dating: element.dating.begin,
         images: element.images,

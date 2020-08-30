@@ -1,16 +1,15 @@
-import german from "../data/json/cda-paintings-v2.de.json";
-import english from "../data/json/cda-paintings-v2.en.json";
-
 export default {
-  setData({ commit }, lang) {
+  async setData({ commit }, lang) {
     if (lang === "English") {
-      const data = english.items;
+      const res = await fetch("/data/json/cda-paintings-v2.en.json");
+      const data = await res.json();
       const langList = [{ id: 1, lang: "Deutsch" }];
       commit("mutateData", { data, lang });
       commit("destructure", data);
       commit("setLangList", langList);
     } else if (lang === "Deutsch") {
-      const data = german.items;
+      const res = await fetch("/data/json/cda-paintings-v2.de.json");
+      const data = await res.json();
       const langList = [{ id: 1, lang: "English" }];
       commit("mutateData", { data, lang });
       commit("destructure", data);
