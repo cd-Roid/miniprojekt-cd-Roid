@@ -1,5 +1,5 @@
-import german from "../../json/cda-paintings-v2.de.json";
-import english from "../../json/cda-paintings-v2.en.json";
+import german from "../data/json/cda-paintings-v2.de.json";
+import english from "../data/json/cda-paintings-v2.en.json";
 
 export default {
   setData({ commit }, lang) {
