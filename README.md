@@ -16,7 +16,7 @@ Im Rahmen des Moduls Frontend Developments wurde die Aufgabe gestellt eine Webse
   - [X] Alle Akkordeons ausblenden auf Klick
   - [X] Navigation in Detailansicht
   - [X] Mobile Ansicht
-  - [X] Auf Github Pages gehostet
+  - [ ] Auf Github Pages gehostet
   
   ## Nice to Have
   
