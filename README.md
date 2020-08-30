@@ -1,3 +1,5 @@
+# [Live Version](https://mi-classroom.github.io/miniprojekt-cd-Roid/)
+
 # Web-Development-miniprojekt George Iyawe 
 
 Im Rahmen des Moduls Frontend Developments wurde die Aufgabe gestellt eine Webseite für das Cranach Digital Archive zu entwickeln. Bei diesem Projekt handelt es sich um eine Teilaufgabe die darin besteht ein Mockup für eine Timeline aus einem anderen Modul nachzubauen anhand der gegebenen Daten aus den Digital Archive. Wesentliche Funktionen der Seite sind
@@ -16,7 +18,7 @@ Im Rahmen des Moduls Frontend Developments wurde die Aufgabe gestellt eine Webse
   - [X] Alle Akkordeons ausblenden auf Klick
   - [X] Navigation in Detailansicht
   - [X] Mobile Ansicht
-  - [ ] Auf Github Pages gehostet
+  - [X] Auf Github Pages gehostet
   
   ## Nice to Have
   
