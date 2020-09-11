@@ -2,7 +2,9 @@
   <div class="dropdown">
     <div class="dropdown__selected" @click="toggle">
       {{ selected }}
-      <span class="material-icons material-icons__arrow">arrow_drop_down</span>
+      <span class="material-icons material-icons__dropdown__arrow"
+        >arrow_drop_down</span
+      >
     </div>
     <div v-if="show == true">
       <ul class="dropdown__items">
@@ -50,20 +52,18 @@ export default {
 </script>
 <style lang="scss">
 @import "../styles/_variables.scss";
+/**
+ */
 .dropdown {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-right: calc((100vw - 940px) / 2);
-  max-width: 80px;
-  margin-right: 20px;
+  position: relative;
   &__selected {
     display: flex;
-    height: 28px;
-    padding: 5px 5px 0px 5px;
+    height: 20px;
+    padding: 2px;
+    justify-content: space-between;
     border: 1px solid $grey-light;
     background-color: $grey;
-    width: 80px;
-    margin: auto;
+    width: 120px;
     &:hover {
       cursor: pointer;
     }
@@ -71,22 +71,13 @@ export default {
   &__items {
     position: absolute;
     height: max-content;
-    padding: 8px 14.5px;
+    padding: 4px;
     border: 1px solid $grey-light;
     background-color: $grey;
-    width: 61px;
+    width: 101px;
     &:hover {
       cursor: pointer;
     }
-  }
-}
-.material-icons__arrow {
-  margin: auto;
-  padding-bottom: 10px;
-}
-@media (max-width: 768px) {
-  .dropdown {
-    display: none;
   }
 }
 </style>
