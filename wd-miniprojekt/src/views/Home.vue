@@ -118,7 +118,7 @@ export default {
   }
   @media (max-width: 768px) {
     .material-icons {
-      &__collapse-all {
+      &__settings-menu {
         display: block;
         font-size: $mobile-logo;
         position: absolute;
