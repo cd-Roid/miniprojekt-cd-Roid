@@ -81,5 +81,11 @@ export default {
   },
   collapse(state) {
     state.collapsed = !state.collapsed;
+  },
+  openSettings(state) {
+    state.setttingsModalOpen = true;
+  },
+  closeSettings(state) {
+    state.setttingsModalOpen = false;
   }
 };

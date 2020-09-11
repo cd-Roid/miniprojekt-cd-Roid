@@ -41,5 +41,11 @@ export default {
   },
   collapseAll({ commit }) {
     commit("collapse");
+  },
+  openSettings({ commit }) {
+    commit("openSettings");
+  },
+  closeSettings({ commit }) {
+    commit("closeSettings");
   }
 };

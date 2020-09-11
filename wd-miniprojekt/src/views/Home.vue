@@ -2,7 +2,11 @@
   <div>
     <nav class="header">
       <p class="header__logo">CDA_</p>
-      <Dropdown />
+      <span
+        class="material-icons material-icons__settings-menu"
+        @click="openSettingModal"
+        >menu</span
+      >
       <span
         class="material-icons material-icons__collapse-all"
         @click="collapseAllItems"
@@ -13,6 +17,7 @@
       <Year class="content__year" />
     </section>
     <ExtendedCard v-if="isVisible === true" :article="toView" />
+    <Settings v-if="setttingsOpen === true" />
   </div>
 </template>
 
@@ -20,26 +25,30 @@
 import { mapState, mapActions } from "vuex";
 import ExtendedCard from "../components/CardModal";
 import Year from "../components/Year";
-import Dropdown from "../components/Dropdown";
+import Settings from "../components/SettingsModal";
 export default {
   name: "Home",
   components: {
     Year,
     ExtendedCard,
-    Dropdown
+    Settings
   },
   computed: {
     ...mapState({
       articles: state => state.data,
       selectedLang: state => state.selectedLang,
       isVisible: state => state.modalOpen,
-      toView: state => state.viewedArticle
+      toView: state => state.viewedArticle,
+      setttingsOpen: state => state.setttingsModalOpen
     })
   },
   methods: {
-    ...mapActions(["setData", "collapseAll"]),
+    ...mapActions(["setData", "collapseAll", "openSettings"]),
     collapseAllItems() {
       this.collapseAll();
+    },
+    openSettingModal() {
+      this.openSettings();
     }
   },
   created() {
@@ -77,6 +86,12 @@ export default {
 .material-icons {
   &__collapse-all {
     display: none;
+  }
+
+  &__settings-menu {
+    padding-top: 20px;
+    padding-right: calc((100vw - 940px) / 2);
+    font-size: $desktop-logo;
   }
 }
 
