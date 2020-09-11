@@ -35,33 +35,56 @@
           </div>
         </div>
         <div class="settings-modal__settings__option">
+          <p class="settings-modal__settings__option__label">
+            Jahre ausblenden
+          </p>
+          <div class="settings-modal__settings__option__dropdown">
+            <p
+              class="setttings-modal__settings__option__dropdown__value"
+              @click="collapseAllItems"
+            >
+              ja / nein
+            </p>
+          </div>
+        </div>
+        <div class="settings-modal__settings__option">
           <p class="settings-modal__settings__option__label">Sprache</p>
           <Dropdown />
         </div>
         <div>
           <p class="settings-modal__settings__option__label">Login</p>
-          <div class="setttings-modal__settings__login-form">
-            <form action method="post">
+          <div>
+            <form
+              action
+              method="post"
+              class="settings-modal__settings__login-form"
+            >
               <input
                 type="text"
                 placeholder="Nutzername"
-                class="setttings-modal__settings__login-form__name"
+                class="settings-modal__settings__login-form__name"
               />
               <input
                 type="password"
-                class="setttings-modal__settings__login-form__password"
+                class="settings-modal__settings__login-form__password"
               />
               <input
                 type="submit"
-                value="einloggen"
-                class="setttings-modal__settings__login-form__login-button"
+                value="Einloggen"
+                class="settings-modal__settings__login-form__login-button"
               />
-              <input
-                type="checkbox"
-                name="eingeloggt bleiben"
-                id
-                class="setttings-modal__settings__login-form__checkbox"
-              />
+              <div>
+                <input
+                  type="checkbox"
+                  name="eingeloggt bleiben"
+                  id
+                  class="setttings-modal__settings__login-form__checkbox"
+                />
+
+                <label class="settings-modal__settings__option__label"
+                  >eingeloggt bleiben</label
+                >
+              </div>
             </form>
           </div>
         </div>
@@ -83,8 +106,12 @@ export default {
   },
   methods: {
     ...mapState({ modalOpen: state => state.setttingsModalOpen }),
-    ...mapActions(["closeSettings"]),
+    ...mapActions(["closeSettings", "collapseAll"]),
     close() {
+      this.closeSettings();
+    },
+    collapseAllItems() {
+      this.collapseAll();
       this.closeSettings();
     }
   }
@@ -126,21 +153,46 @@ export default {
   &__settings {
     padding-top: 60px;
     width: 50%;
+    &__login-form {
+      display: flex;
+      flex-direction: column;
+      &__name {
+        width: 240px;
+        margin-bottom: 20px;
+      }
+      &__password {
+        width: 240px;
+        margin-bottom: 20px;
+      }
+      &__login-button {
+        background-color: black;
+        color: $white;
+        width: 80px;
+        margin-bottom: 20px;
+      }
+    }
     &__option {
       display: flex;
       flex-direction: row;
       padding-bottom: 20px;
       &__label {
         font-weight: bolder;
+        padding-bottom: 10px;
       }
       &__dropdown {
         display: flex;
-        justify-content: center;
-        position: relative;
-        left: 60px;
+        height: 20px;
+        padding: 2px;
         border: 1px solid $grey-light;
+        justify-content: space-between;
         background-color: $grey;
         width: 120px;
+        margin-left: auto;
+        margin-right: 20px;
+        position: relative;
+        &:hover {
+          cursor: pointer;
+        }
       }
     }
   }
@@ -154,59 +206,47 @@ export default {
       position: absolute;
       right: 10px;
       top: 10px;
+      &:hover {
+        cursor: pointer;
+      }
     }
     &__arrow {
-      padding: 0;
       position: relative;
-      left: 40px;
     }
   }
 }
 
 @media (max-width: 768px) {
-  .modal {
-    width: 100%;
+  .settings-modal {
+    width: 100vw;
     height: 100vh;
-    top: 0px;
-    &__section {
-      &__imagebox {
-        height: 42%;
-        width: 100%;
-      }
-      &__description {
-        height: 48%;
-        width: 100vw;
-        position: absolute;
-        padding: 10px;
-        bottom: 0px;
-        font-size: $mobile-fliestext;
-        overflow: scroll;
-        &__sub {
-          &__title {
-            font-size: $mobile-title;
-          }
-          &__text {
-            height: max-content;
-            padding-right: 10px;
+    position: fixed;
+    top: 0;
+    &__about-us {
+      display: none;
+    }
+    &__settings {
+      padding: 60px;
+      width: 100%;
+      &__option {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-bottom: 40px;
+        &__dropdown {
+          display: flex;
+          height: 20px;
+          padding: 2px;
+          border: 1px solid $grey-light;
+          background-color: $grey;
+          width: 80px;
+          margin-left: 60px;
+          margin-right: 0px;
+          position: relative;
+          &:hover {
+            cursor: pointer;
           }
         }
-      }
-      &__button {
-        top: 10px;
-        right: 10px;
-      }
-      &__stats {
-        position: relative;
-        margin-top: 40px;
-        &__inventoryNumber {
-          font-size: $mobile-card-id;
-        }
-      }
-      &__interaction {
-        position: fixed;
-        top: 43%;
-        width: 90vw;
-        //z-index: 1;
       }
     }
   }
