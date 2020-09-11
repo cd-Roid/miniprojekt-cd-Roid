@@ -5,7 +5,7 @@ export default {
   liked: [],
   language: [{ id: 1, lang: "English" }],
   modalOpen: Boolean,
-  setttingsModalOpen: true,
+  setttingsModalOpen: false,
   viewedArticle: null,
   selectedLang: "Deutsch",
   collapsed: true
