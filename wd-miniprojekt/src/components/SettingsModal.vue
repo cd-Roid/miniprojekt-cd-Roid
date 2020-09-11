@@ -6,10 +6,33 @@
         >close</span
       >
       <section class="settings-modal__about-us">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi eos
-        maiores temporibus autem atque eligendi exercitationem vitae eum quasi
-        nam et ad assumenda, ut impedit cumque perspiciatis eaque voluptatem.
-        Commodi!
+        <p class="settings-modal__about-us__text">
+          Lucas Cranach der Ältere (1472 – 1553) gehört zu den bedeutendsten
+          Malern und Grafikern der deutschen Renaissance. Bereits seine
+          Zeitgenossen waren beeindruckt von der Geschwindigkeit mit der Cranach
+          produzierte: Weltweit sind heute noch mehr als 1500 Gemälde aus der
+          Cranach-Werkstatt erhalten, und diese repräsentieren nur einen
+          Bruchteil des ursprünglichen Werkbestandes. Eine beträchtliche Anzahl
+          der erhaltenen Gemälde wurde bisher nicht wissenschaftlich bearbeitet.
+        </p>
+
+        <p class="settings-modal__about-us__text">
+          Im Verbund mit 310 Partnern in 31 Ländern arbeiten der Kunstpalast in
+          Düsseldorf und die Technischer Hochschule Köln seit Oktober 2009
+          gemeinsam an einem Forschungsprojekt zur digitalen Erschließung der
+          Gemälde von Lucas Cranach dem Älteren, unterstützt von der Andrew W.
+          Mellon Foundation.
+        </p>
+
+        <p class="settings-modal__about-us__text">
+          Das interdisziplinäre Projektteam konnte bislang Datensätze von über
+          1.900 Gemälden auf­bereiten, insgesamt mehr als 16.500 Abbildungen
+          (u.a. hochaufgelöste Gesamt- und Detailaufnahmen,
+          Infrarotreflektografien und Röntgenaufnahmen) sowie über 1.200
+          digitalisierte und transkribierte Archivdokumente. Die Daten werden
+          stetig erweitert und den Aus­tausch über neueste Forschungsresultate
+          zu Cranachs Bildern sichtbar erleichtern.
+        </p>
       </section>
       <section class="settings-modal__settings">
         <div class="settings-modal__settings__option">
@@ -147,8 +170,11 @@ export default {
   width: 940px;
   z-index: 1;
   &__about-us {
-    padding: 60px 10px;
+    padding: 40px 20px;
     width: 50%;
+    &__text {
+      padding-bottom: 20px;
+    }
   }
   &__settings {
     padding-top: 60px;
